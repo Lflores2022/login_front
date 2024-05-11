@@ -20,17 +20,18 @@ const Productlist = () => {
   }
   return (
     <div>
-        <h1 className="title">Products</h1>
-      <h2 className="subtitle">List of Products</h2>
-      <Link to={'/products/add'} className='button is-primary mb-2'>Add New</Link>
+        <h1 className="title">Prospectos</h1>
+      <h2 className="subtitle">Lista de Prospectos</h2>
+      <Link to={'/products/add'} className='button is-primary mb-2'>Agregar nuevo</Link>
       <table className="table is-striped is-fullwidth">
         <thead>
           <tr>
             <th>No</th>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Created By</th>
-            <th>Actions</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Telefono</th>
+            <th>CURP</th>
+            <th>NSS</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +39,10 @@ const Productlist = () => {
           <tr key={product.uuid}>
             <td>{index + 1}</td>
             <td>{product.name}</td>
-            <td>{product.price}</td>
+            <td>{product.addres}</td>
+            <td>{product.phoneNumber}</td>
+            <td>{product.CURP}</td>
+            <td>{product.NSS}</td>
             <td>{product.user.name}</td>
             <td>
               <Link to={`/products/edit/${product.uuid}`} className="button is-small is-info">Edit</Link>

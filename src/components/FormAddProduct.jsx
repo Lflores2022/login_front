@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router-dom'
 const FormAddProduct = () => {
 
   const [name, setName] = useState("")
-  const [price, setPrice] = useState("")
+  const [addres, setAddres] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [CURP, setCURP] = useState("")
+  const [NSS, setNSS] = useState("")
   const [msg, setMsg] = useState("")
   const navigate = useNavigate()
 
@@ -14,7 +17,10 @@ const FormAddProduct = () => {
     try {
       await axios.post('http://localhost:5000/products',{ 
         name: name,
-        price: price
+        addres: addres,
+        phoneNumber: phoneNumber,
+        CURP: CURP,
+        NSS: NSS
       })
       navigate('/products')
     } catch (error) {
@@ -46,14 +52,50 @@ const FormAddProduct = () => {
               </div>
             </div>
             <div className="field">
-              <label className="label">Price</label>
+              <label className="label">Addres</label>
               <div className="control">
                 <input
                   type="text"
                   className="input"
-                  value={price}
-                  onChange={(e)=> setPrice(e.target.value)}
-                  placeholder="Price"
+                  value={addres}
+                  onChange={(e)=> setAddres(e.target.value)}
+                  placeholder="Addres"
+                ></input>
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">TELEFONO</label>
+              <div className="control">
+                <input
+                  type="text"
+                  className="input"
+                  value={phoneNumber}
+                  onChange={(e)=> setPhoneNumber(e.target.value)}
+                  placeholder="Telefono"
+                ></input>
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">CURP</label>
+              <div className="control">
+                <input
+                  type="text"
+                  className="input"
+                  value={CURP}
+                  onChange={(e)=> setCURP(e.target.value)}
+                  placeholder="CURP"
+                ></input>
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">NSS</label>
+              <div className="control">
+                <input
+                  type="text"
+                  className="input"
+                  value={NSS}
+                  onChange={(e)=> setNSS(e.target.value)}
+                  placeholder="NSS"
                 ></input>
               </div>
             </div>
